@@ -1,0 +1,834 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>SRS - Document Tagging Service</title>
+  <style media="screen">
+    body {
+      font-size: 16px;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .container {
+      width: 90%;
+      margin: 0 auto;
+    }
+    /*toc index*/
+
+    .toc_index ol {
+      list-style-type: none;
+      counter-reset: item;
+      margin: 0;
+      padding: 0;
+    }
+
+    .toc_index li {
+      display: table;
+      counter-increment: item;
+    }
+
+    .toc_index li:before {
+      content: counters(item, ".") ". ";
+      display: table-cell;
+    }
+
+    .toc_index li li {
+      margin: 0;
+    }
+    /*contents*/
+    /*contents*/
+
+    .contents ol {
+      list-style-type: none;
+      counter-reset: item;
+    }
+
+    .contents li {
+      display: block;
+      position: relative;
+    }
+
+    .contents li:before {
+      content: counters(item, ".")".";
+      counter-increment: item;
+      position: absolute;
+      margin-right: 100%;
+      right: 10px;
+      /* space between number and text */
+    }
+
+    .contents li li {
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <div class="cover">
+        <h2>Software Requirements Specification - English </h2>
+        <p>for </p>
+        <h3>Document Tagging Service</h3>
+      </div>
+      <hr>
+      <h3>Table of Contents</h3>
+      <nav class="toc_index">
+
+        <ol>
+          <!--Introduction start(TOC)-->
+          <li>
+            <a href="#Introduction">Introduction</a>
+            <ol>
+              <li>
+                <a href="#Purpose">Purpose</a>
+              </li>
+              <li>
+                <a href="#Intended_Audience_and_Reading_Suggestions">Intended Audience and Reading Suggestions</a>
+              </li>
+              <li>
+                <a href="#Product_Scope">Product Scope</a>
+              </li>
+              <li>
+                <a href="#References">References</a>
+              </li>
+            </ol>
+          </li>
+          <!--Introduction end(TOC)-->
+
+          <!--Overall Description start(TOC)-->
+          <li>
+            <a href="#Overall_Description">Overall Description</a>
+            <ol>
+              <li>
+                <a href="#Product_Perspective">Product Perspective</a>
+              </li>
+              <li>
+                <a href="#Product_Function">Product Function</a>
+              </li>
+              <li>
+                <a href="#User_Classes_and_Characteristics">User Classes and Characteristics</a>
+              </li>
+              <li>
+                <a href="#Operating_Environments">Operating Environments</a>
+              </li>
+              <li>
+                <a href="#Design_and_Implementation_Constraints">Design and Implementation constraints</a>
+              </li>
+              <li>
+                <a href="#Short_User_Documentation">Short User Documentation</a>
+              </li>
+              <li>
+                <a href="#Assumptions_and_Dependencies">Assumptions and Dependencies</a>
+              </li>
+            </ol>
+          </li>
+          <!--Overall Description end(TOC)-->
+
+          <!--External Interface Requirements start(TOC)-->
+          <li>
+            <a href="#External_Interface_Requirements">External Interface Requirements</a>
+            <ol>
+              <li>
+                <a href="#User_Interface">User Interface</a>
+              </li>
+              <li>
+                <a href="#Hardware_Interface">Hardware Interface</a>
+              </li>
+              <li>
+                <a href="#Software_Interface">Software Interface</a>
+              </li>
+              <li>
+                <a href="#Communication_Interface ">Communication Interface </a>
+              </li>
+            </ol>
+          </li>
+          <!--External Interface Requirements end(TOC)-->
+
+          <!--System Features start(TOC)-->
+          <li>
+            <a href="#System_Features">System Features</a>
+            <ol>
+              <li>
+<<<<<<< HEAD
+                <a href="#System_Feature_1">Single User</a>
+              </li>
+              <li>
+                <a href="#System_Feature_2">Group User</a>
+=======
+                <a href="#Single_User">Single User</a>
+              </li>
+              <li>
+                <a href="#Group_User">Group User</a>
+>>>>>>> cd6c6e760cf9f346bff8dab6673a2fc26a3df73e
+              </li>
+            </ol>
+          </li>
+          <!--System Features end(TOC)-->
+
+          <!--Other Nonfunctional Requirements start(TOC)-->
+          <li>
+            <a href="#Other_Nonfunctional_Requirements">Other Non-functional Requirements</a>
+            <ol>
+              <li>
+                <a href="#Performance_Requirment">Performance Requirement</a>
+              </li>
+              <li>
+                <a href="#Safety_and_Security_Requirements">Safety and Security Requirements</a>
+              </li>
+              <li>
+                <a href="#Software_Quality_Attributes">Software Quality Attributes</a>
+              </li>
+              <li>
+                <a href="#Business_Rules">Business Rules</a>
+              </li>
+            </ol>
+          </li>
+          <!--Other Nonfunctional Requirements end(TOC)-->
+
+          <!--Other Requirements start(TOC)-->
+          <li>
+            <a href="#Other_Requirements">Other Requirements</a>
+          </li>
+          <!--Other Requirements end(TOC)-->
+
+          <!--Appendix A: Glossary start(TOC)-->
+          <li>
+            <a href="#Glossary">Appendix A: Glossary</a>
+          </li>
+          <!--Appendix A: Glossary end(TOC)-->
+
+          <!--Appendix B: Analysis Model start(TOC)-->
+          <li>
+            <a href="#Analysis_Model">Appendix B: Analysis Model</a>
+          </li>
+          <!--Appendix B: Analysis Model end(TOC)-->
+
+          <!--Appendix C: To Be Determined Liststart(TOC)-->
+          <li>
+            <a href="#To_Be_Determined_List">Appendix C: To Be Determined List</a>
+          </li>
+          <!--Appendix C: To Be Determined List end(TOC)-->
+
+        </ol>
+
+      </nav>
+    </header>
+
+    <hr>
+
+    <div class="contents">
+      <!-- list start -->
+      <ol>
+        <!-- 1. intro -->
+        <li id="Introduction">
+          <strong>Introduction</strong>
+          <p>
+            This SRS (Software Requirement Specification) is about Document Tagging System. Document Tagging System is a software which help one
+            or a group of people to tag one or multiple documents. Since there are many Document Tagging System exist in the software market
+            but none of them give as convenient way to use as we give. This software can be used in web and as a mobile app both in android and ios
+             and Moddle so all the ways are given to the user. So the user can use this product anywhere he belongs. This SRS describe the Product purpose,
+              product feature, function and non-functional requirements which guide anyone about what the product is all about.
+          </p>
+
+          <ol>
+            <!-- 1.1 purpose -->
+            <li id="Purpose">
+              <strong>Purpose</strong>
+              <p>
+                The name of our product is Document Tagging System which give a general idea what the product is all about. The purpose of
+                this product is to give a convenient way to the user to tag his/her documents. In this system, a user can tag a whole
+                document or he/she can tag a particular word or number of words. So all kinds of flexibility is given to the
+                system. This system can be used in anywhere as this service is in the web and there also exists a friendly app version
+                of this system in android and ios. The service can be integrated
+                in system like Moodle. There are many options to share the document with other users or group.
+              </p>
+            </li>
+
+            <!-- 1.2 Document Conventions -->
+            <li id="Document_Conventions">
+              <strong>Document Conventions</strong>
+              <p>
+                A document convention is followed throughout this document. The sections are listed numerically and sub-sections by nested
+                numeric way. The section's titles are bold, font size 16px and the descriptions are normal, font 16px. There is an appendix at the
+                start of TOC that links the sections and sub-sections described below. Other Appendix are given at the footer.
+              </p>
+            </li>
+
+            <!-- 1.3 Intended Audience and Reading Suggestions -->
+            <li id="Intended_Audience_and_Reading_Suggestions">
+              <strong>Intended Audience and Reading Suggestions</strong>
+              <p>
+                The intended audience of this system is developers, project managers, users, testers and documentation writers.
+                As the document is written in a standard way which is IEEE standard so any one can read this document with no
+                difficulties. But it is good to read the document as it is written rather than read here and there with on sequences.
+              </p>
+            </li>
+
+            <!-- 1.4 Product Scope -->
+            <li id="Product_Scope">
+              <strong>Product Scope</strong>
+              <p>
+                As this system give the user all kinds of flexibility to use, the product scope is very good in the Document Tagging
+                system. The goal of this product is to get all kind of users. To achieve the goal, this system give many friendly options
+                to a user to tag a document. Here a user and group of user can give constraint to the document how it is tagged by a
+                particular user. For this reason there come different tagging system like private, public, restricted, sequential restricted. Those options
+                give the users of organization the flexibility how a document can be tagged.           
+             </p>
+            </li>
+
+            <!-- 1.5 References -->
+            <li id="References">
+              <strong>References</strong>
+              <p>
+                1. http://www.experian.com/business-services/decisioning/business-rules-software.html
+              </p>
+              <p>
+                2. http://www.cse.msu.edu/~cse870/IEEEXplore-SRS-template.pdf
+              </p>
+            </li>
+
+          </ol>
+        </li>
+        <!-- intro complete -->
+
+        <!-- 2. OverallDescription -->
+        <li id="Overall_Description">
+          <strong> Overall Description</strong>
+          
+
+          <ol>
+            <!-- 2.1 Product Perspective -->
+            <li id="Product_Perspective">
+              <strong>Product Perspective</strong>
+              <p>
+                Our Document Tagging System (DTS) is a self-contained product. User can use this product from web or from their personal mobile phone. This product can also be used as a third party. Using this product user can get all types of tagging facilities. From Moodle or other External System, User can use this product using Plug-In. We also provide client of client (COC) facility. In this product we interconnect many sub-system and build a large system. In this product we emphasis on Identity management for authentication of proper authorized user. We also provide <a href="https://en.wikipedia.org/wiki/Single_sign-on">Single Sign On (SSO)</a> and
+                <a href="https://en.wikipedia.org/wiki/OAuth">OAuth </a> for identification purposes.
+              </p>
+            </li>
+            <!-- 2.2 Product Function-->
+            <li id="Product_Function">
+              <strong>Product Function</strong>
+              <p>
+                <ol>
+                  <li> <strong>User can Tag Document</strong> </li>
+                  </br>
+                  User can Tag any part of the document.</br>
+                  </br>
+                  <li> <strong>Edit Tag </strong> </li>
+                  </br>
+                  One user can Edit his/her Tag on the Document if he/she have privilage.</br>
+                  </br>
+                  <li> <strong>Delete Tag</strong> </li>
+                  </br>
+                  One user can Delete his/her Tag on the Document if he/she have privilage.</br>
+                  </br>
+                  
+                  <li> <strong>Share Tag</strong> </li>
+                  </br>
+                  One user can share his/her Tag on Document with Other user.</br>
+                  </br>
+                  <li> <strong>Support two types of users :</strong>
+                    <ol>
+                      </br>
+                      <li> <strong>Single User</strong> </li>
+                      For example: Anyone.
+                      </br>
+                      <li> <strong>Group User</strong> </li>
+                      For example: Any Group, Company, Organization, Bank etc.
+                    </ol>
+                  </li>
+                  </br>
+                  <li> <strong>All user can get two types of facility. These are:</strong>
+                    <ol>
+                      </br>
+                      <li> Subscribe </li>
+                      <li> Publish </li>
+                    </ol>
+                  </li>
+                  </br>
+                  <li> <strong>Add 3 types of Privileges for users these are:</strong>
+                    <ol>
+                      </br>
+                      <li> <strong>Private Tag</strong></li>
+                      Only the creator of the document can tag a private document.
+                      </br> 
+                      
+                      <li> <strong>Public Tag</strong></li>
+                      Anyone of the compnay can Tag on Document without maintaining order.
+                      </br>
+                      
+                      <li><strong>Sequential Tag</strong></li>
+                      Only permitted user can Tag on Document with Maintaining a strict Order.
+                      </br>
+                     
+                      <li><strong>Restricted Tag</strong></li>
+                      Only Restricted or Permitted user can Tag on Document.
+                      </br>
+                    </ol>
+                  </li>
+                </ol>
+
+              </p>
+            </li>
+            <!-- 2.3 User Classes and Characteristics -->
+            <li id="User_Classes_and_Characteristics">
+              <strong>User Classes and Characteristics</strong>
+              <p>
+              The users of our Product  mainly classified into two classes. They are Single User, Group User. Any individual user are single user. These user can individually use our product for tagging purpose. On the other hand, any group of users are Group users. These user can also use our product for Tagging purpose. Example of Group users are: Office Employee, Bank Employee, Students etc. Using this product Group user can tag the Document and share the tagging document with other users. In this case Group user can add privileges on the document.
+              These privileges are private, Public, Sequential, Restricted.
+              </p>
+            </li>
+            <!-- 2.4 Operating Environments -->
+            <li id="Operating_Environments">
+              <strong>Operating Environments</strong>
+              <p>
+                </br>
+                Our Product's web service can be used from any platform using through Google Chrome, Mozilla Firefox, Opera Mini, Safari, UC browser etc.
+
+                </br>
+                <ol>
+                  <strong>We develop web service using: </strong>
+
+                  <ul>
+                    </br>
+                    <li>.Net (Framework)</li>
+                    <li>C# (C sharp) Programming Language</li>
+                    <li>IIS Web Server</li>
+                    <li>MsSQL database</li>
+                    </br>
+                  </ul>
+
+                   <strong>We develop our web application using: </strong>
+                  <ul>
+                    </br>
+                    <li>Django (Framework)</li>
+                    <li>Python (Programming Language)</li>
+                    <li>Material Design Pattern</li>
+                    <li>HTML 5</li>
+                    <li>CSS</li>
+                    </br>
+                  </ul> 
+
+                  <strong>We develop 3rd Party Plug In for Moodle or any others System using: </strong>
+                  <ul>
+                    </br>
+                    <li>PHP programming Language</li>
+                    </br>
+                  </ul>
+
+                </ol>
+              </p>
+
+            </li>
+
+            <!-- 2.5 Design and Implementation constraints -->
+            <li id="Design_and_Implementation_Constraints">
+              <strong>Design and Implementation Constraints</strong>
+              <p>
+                This is a distributed service. So, The cloud platform is responsible for receiving the data from any plugins that build for this service and also able to sending data. The system will have a feature to integrate with other third party applications (like Moodle). So the constants will be: For service we are using .Net Framework, we will use Django (a python framework) for cloud platform, for ios we use swift and for android we use Java programming language. And for Moddle we use Php.
+
+              </p>
+            </li>
+
+            <!-- 2.6 Short User Documentation -->
+            <li id="Short_User_Documentation">
+              <strong>Short User Documentation</strong>
+              <p>
+                User can use the service from two places. They can use it from our website or they can edit their document by signing on Moodle.
+                <p><strong>Website:</strong> A user needs to sign up to DTS to get the DTS service. After signing up, the user has to upload any documents that he/she wants to tag and then can publish the documents to others.</P>
+                <p><strong>Moodle:</strong> DTS comes with Moodle plugin. So all DTS users can get the full DTS service in Moodle environment.</p>
+              </p>
+            </li>
+
+            <!-- 2.7 Assumptions and Dependencies -->
+            <li id="Assumptions_and_Dependencies">
+              <strong>Assumptions and Dependencies</strong>
+              <p>
+              To use our service all a user need to do is add the DTS (Document Tagging System) plugins to which they want to use the service (Moodle), if they use it from our website then they do not need any plugin to tag any documents, after uploading the file for tagging, the user simply can start to tag the documents.
+              </p>
+              <p>
+                The system needs a webserver and a database and we are using IIS as webserver as it comes with .Net the backend framework and as database we are using MsSQL.
+
+              </p>
+            </li>
+
+          </ol>
+        </li>
+        <!-- OverallDescription complete -->
+
+        <!-- 3 External Interface Requirements -->
+        <li id="External_Interface_Requirements">
+          <strong>External Interface Requirements</strong>
+          <p>
+            This part will consist the four most important interfaces in our system. Each and every part of this section is important for our clients and user. It makes it easier for them to understand part of the system through the following part:
+            <ol>
+              <li id = "User Interface">
+                <strong>User Interface</strong>
+              </li>
+              <li id = "Hardware Interface">
+                <strong>Hardware Interface</strong>
+              </li>
+              <li id = "Software Interface">
+                <strong>Software Interface</strong>
+              </li>
+              <li id = "Communication Interface">
+                <strong>Communication Interface</strong>
+              </li>
+            </ol>
+            </br>Each part's description are given below:
+          </p>
+          <ol>
+            <!-- 3.1 User Interface -->
+            <li id="User_Interface">
+              <strong>User Interface</strong>
+              <p>
+                There will be three type of user interfaces. These interfaces required characteristics between our software and our user. For our user interfaces we will use bootstrap material UI in Django and for the backend we will use .NET. Three types of interfaces are:
+                <ol>
+                  
+                  <li id = "Moodle Plugin">
+                    <strong>Moodle Plugin</strong>
+                    </br><p>For this interface we will use our ULAB Moodle's basic interfaces. This interface plugin will be on PHP. In moodle we use an editor for PDF, it's Moodle  editor for annotation. In this editor, there is some awesome features. There will some button with some amazing features. Some features be like: </p>
+                    <ol>
+                      <li id = "Add Tag">
+                        <strong>Add tag:</strong>
+                        </br><p>There will some default tag for the user's to use. User can add some tag too by their own choice. Just he/she needs to select some text and tag. We will provide some features like tag color, some icon to use as a tag etc.</p>
+                      </li>
+                      <li id = "Comment Tag">
+                        <strong>Comment Tag:</strong>
+                        </br><p>User can tag some texts or a line or multiple line and also a user can comment on those tags. They can also add many icons line right or wrong sign. And also can tag line 
+                        by many type of colors.</p>
+                      </li>
+                      <li id="Add multiple PDF files">
+                        <strong>Add Multiple PDF files:</strong> <br>
+                        <p>A user can add one or multiple PDF files in moodle. One user can also can edit or comment or tag on those files if user have permission.</p>
+                      </li>
+                      <li id="View all PDF files">
+                        <strong>View all PDF files:</strong>
+                        <p>All users can view PDF files form a group if user is in the group. </p>
+                      </li>
+                    </ol>
+                  </li>
+                  <li id = "Web Application">
+                    <strong>Web Application</strong>
+                    </br><p>Just like the Moodle we will use our own web application for the user. The features will be more or less same for the both interfaces. User can login in our system by becoming our registered user or by using some third party authentication. Options will be provide through our system.</p>
+                  </li>
+                  <li id="Android Application">
+                    <strong>Android Application</strong> <br>
+                    <p>Like web application and iOS application a user also can have our android application in his/her smartphone. It's interface will be same as web application(web view) and iOS application so that user can understand it easily. Also users can  upload and annonate PDF files from android application and all the options web application and iOS application have.
+                    </p>
+                  </li>
+                  <li id="iOS Application">
+                    <strong>iOS Application</strong> <br>
+                    <p>Like web application and android application a user also can have our iOS application in his/her iphone. It's interface will be same as web application(web view) and android application so that user can understand it easily. Also users can upload and annonate PDF files from our iOS application and all the options web application and android application have.
+                    </p>
+                  </li>
+                </ol>
+              </p>
+            </li>
+
+            <!-- 3.2 Hardware Interface -->
+            <li id="Hardware_Interface">
+              <strong>Hardware Interface</strong>
+              <p>
+                In hardware interface, at first we need to know how many user will use this system and how big the database will. It relies on that the system, which will require a database to store data. If there's some problems occur while the user to tag the document in-case of load shedding or bad Internet connection, our database should have backup capabilities. After that the system will automatically synchronize data from the user. For this interface it requires windows machine for client application, Ubuntu machine for web application and Moodle plug in.
+              </p>
+            </li>
+
+            <!-- 3.3 Software Interface -->
+            <li id="Software_Interface">
+              <strong>Software Interface</strong>
+              <p>
+                For software interface, we will use Moodle as a software. Moodle's basic interface will use for this. And we will use Moodle our software and interface. There will be a moodle interface and user will set those rules or PDF. For the view of our web application we will use web browser. The rest will be same as hardware interface.
+              </p>
+            </li>
+
+            <!-- 3.4 Communication Interface -->
+            <li id="Communication_Interface">
+              <strong>Communication Interface</strong>
+              <p>
+                The system is hosted on a server name Microsoft Azure. So, it need HTTP protocol to communicate with the server. We will use our main service API to communicate our applications. Communication between the user and the system can be established through our interfaces. The data transfer rate in our database will be on normal process. We will use browser and for every possible step the asynchronous synchronization process is available for the user. If any problem occurs no data will get lost in our system. For the better communication we will use third party authentication system. User can logged in our system via gmail, face-book, linked-in, twitter and etc. This system has the permission to access in all popular web browsers that can interact with HTML pages. The users can communicate via http/https (port: 80/443) connection and the client will also need to communicate via http/https(port: 80/443) connection.
+              </p>
+            </li>
+
+          </ol>
+        </li>
+        <!-- External Interface Requirements complete -->
+
+        <!-- 4 System Features -->
+        <li id="System_Features">
+          <strong>System Features</strong>
+          <p>Functional Requirements of Document Tagging Service are given below:
+          </p>
+          <ol>
+            <li id="Single_User">
+              <strong> Single User </strong>
+              <ol>
+                <li>
+                  <strong> Document Type</strong>
+                  <p>
+                    Document might be two types.
+                    <ol>
+                      <li> <b> Image </b></li>
+                      <li> <b>  Word Doc </b> </li>
+                    </ol>
+                  </p>
+                </li>
+
+                <li>
+                  <strong> Tag</strong>
+                  <p>
+                    Single user can tag any file in two way.
+                    <ol>
+                      <li> <b>  In Document </b>
+                        <p> User can tag any part of the document</p>
+                      </li>
+                      <li> <b> File </b>
+                        <p> User can tag the whole document</p>
+                      </li>
+                    </ol>
+                  </p>
+                </li>
+
+                <li>
+                  <strong> Share </strong>
+                  <p>
+                    <ol>
+                      <li> <b>  Publisher </b>
+                        <p> User can publish any document and share with subscriber. </p>
+                      </li>
+                      <li> <b>Subscriber  </b>
+                        <p> User can subscribe any document which is published by any publisher. </p>
+                      </li>
+                    </ol>
+                  </p>
+                </li>
+
+                <li>
+                  <strong> Document Access by third Party</strong>
+                  <p>
+                    Single user can access any file via web browser.
+                    <ol>
+                      <li> <b> Online </b>
+                        <p> Document access is enable in Online. </p>
+                      </li>
+                    </ol>
+                  </p>
+                </li>
+              </ol>
+            </li>
+            <!-- System Feature 2 -->
+            <li id="Group_User">
+              <strong> Group User </strong>
+              <ol>
+                <li>
+                  <strong> Document Type</strong>
+                  <p>
+                    Document might be two types.
+                    <ol>
+                      <li> <b>  Image </b></li>
+                      <li> <b>  Word Doc </b> </li>
+                    </ol>
+                  </p>
+                </li>
+
+                <li>
+                  <strong> Tag</strong>
+                  <p>
+                    Group user can tag any file in two way.
+                    <ol>
+                      <li> <b>  In Document </b>
+                        <p> User can tag any part of the document</p>
+                      </li>
+                      <li> <b> File </b>
+                        <p> User can tag the whole document</p>
+                      </li>
+                    </ol>
+                  </p>
+                </li>
+
+                <li>
+                  <strong>Share </strong>
+                  <p>
+                    <ol>
+                      <li> <b> Publisher </b>
+                        <p> User can publish any document and share with subscriber. </p>
+                      </li>
+                      <li> <b> Subscriber  </b>
+                        <p> User can subscribe any document which is published by any publisher. </p>
+                      </li>
+                    </ol>
+                  </p>
+                </li>
+
+                <li>
+                  <strong> Document Access by third Party</strong>
+                  <p>
+                    <ol>
+                      <li> <b> Local </b>
+                        <p> Document access is possible from Desktop. </p>
+                      </li>
+                    </ol>
+                  </p>
+                </li>
+
+                <li>
+                  <strong> Document Manipulation</strong>
+                  <p>
+                    <ol>
+                      <li><b> Public </b>
+                        <p> Document is visible to public, anyone can tag on this.</p>
+                      </li>
+                      <li> <b>Sequential </b>
+                        <p> Any tag on a document should be sequential.</p>
+                      </li>
+                      <li> <b>Restricted </b>
+                        <p> Some tag on a document for some specific user would be restricted.</p>
+                      </li>
+                    </ol>
+                  </p>
+                </li>
+              </ol>
+            </li>
+          </ol>
+        </li>
+        <!-- System Features complete -->
+
+        <!-- 5 Other Nonfunctional Requirements -->
+        <li id="Other_Nonfunctional_Requirements">
+          <strong>Other Non-functional Requirements</strong>
+          <p>
+            <ol>
+              <li> User Friendly UI (User Interface)</li>
+              <li> Very Fast response time</li>
+              <li> Concurrency Control</li>
+              <li>Handling Synchronization </li>
+              <li>Identify actual User</li>
+              <li> Maintain User Authorization</li>
+              <li>Transaction Management</li>
+            </ol>
+          </p>
+
+          <ol>
+            <!-- 5.1 Performance Requirement -->
+            <li id="Performance_Requirment">
+              <strong>Performance Requirement</strong>
+              <p>
+                <!--Gautam Edited -->
+                Our service is user friendly and reliable. Our main service(.NET) is connected with moodle, android, iOS and also with web. Performance will measure by user's CPU (Central Processing Unit), internet connection speed. But main performance (run time) of our backend service is very sufficient. Our service can take those tags in servers at a real time. Since our service will be connected to every applications(web, moodle, iOS, android), so our service design that way so that it can done its work properly and efficiently.
+                <br> A user shouldn't be worry about our service performance. An admin person can create a user or client, in that case our service will take care of performance of admin users or clients. If user work online then data will be saved in real time and save those data in cloud. Our service will be integrated with third party software (with permission) and it's performance will be same reliable.
+              </p>
+            </li>
+            <!-- 5.2 Safety and Security Requirements -->
+            <li id="Safety_and_Security_Requirements">
+              <strong>Safety and Security Requirements</strong>
+              <p>
+                A user can sign in our system by many ways. It can be our service verification or oAuth or Single sign-on (SSO) for verification or credential. So a user should not be worry about their security.
+                Credentials will be safe and sound in our service. <br>
+                Also for authorization our service will take care of authorization of every user. A user should not be worry about our service authorization and can give restrictions on users. Restriction can be view, edit, view and edit etc. So it will be handle as usual.      
+                <br>At the end, every safety and security is maintain good so user shouldn't worry about authentication and authorization.
+              </p>
+            </li>
+
+            <!--  5.4 Software Quality Attributes -->
+            <li id="Softwar_Quality_Attributes">
+              <strong> Software Quality Attributes</strong>
+              <p>
+                Software quality attributes specify the required reliability, availability, security, maintainability, robustness, portability of the software system. <br> <br>
+
+                <strong>Reliability: </strong> The system should able to run continuously a long duration of time and not suffer from system slowdowns or crashes for memory leaks. <br> <br>
+
+                <strong>Availability: </strong> The information can be send again for verification if the internet service lost during sending information to server. <br> <br>
+
+                <strong>Security: </strong> Unauthorized access to the system and its data is not allowed. Secure the communication between the system and server. <br> <br>
+
+                <strong>Maintainability: </strong> The application should be easy to extend, so in order for future functions to be implemented easily to the application. The code should be indicted in a way that it favors implementation of incipient functions. <br> <br>
+
+                <strong>Robustness: </strong> The system is need to enough robust to successful a transaction and ability of a system to cope with errors during execution. <br> <br>
+
+                <strong>Portability: </strong> The software should be able to run on any Microsoft windows predicated platform.
+              </p>
+            </li>
+            <!--  5.5 Business rules -->
+            <li id="Business_Rules">
+              <strong>Business Rules</strong>
+              <p>
+                <!--Gautam Edited -->
+                Our service has a business rules. We use agile business rules for our service so that our service can grow rapidly and we can take intelligent decision. Business rules are difficult to implement. But strategy management is a good point for our business rules.
+                <br> Strategy management is an important management system for our business rules and we will use agile business rules so that we can make a good profit by our service.
+              </p>
+            </li>
+          </ol>
+        </li>
+        <!-- 5 Other Nonfunctional Requirements -->
+
+        <!-- 6 Other Requirements-->
+        <li id="Other_Requirements">
+          <strong>Other Requirements</strong>
+          <p>
+          <strong>User Requirments:</strong> In order to databases and other purposes this system requires number of user of this system, location of the user, bandwidth between the user and infrastructure and expected training on the application.
+        </br><strong>Application Type Requirments:</strong> Web, desktop, thirdparty integration etc.</p>
+          </p>
+        </li>
+        <!-- 6 Other Requirements-->
+
+      </ol>
+      <!-- /list complete   -->
+
+      <!-- Appendix A: Glossary -->
+      <h4 id="Glossary">Appendix A: Glossary</h4>
+      <div>
+        <p>
+			1. DTS - Document Tagging System.</br>
+			2. COC - Client of Client.</br>
+			3. SSO - Single Sign On.</br>
+			4. DTS - Data Transformation Services.</br>
+			5. WSGI - Web Server Gateway Interface.</br>
+			6. UI - User Interface. </br>
+			7. CPU - Central Processing Unit.</br>
+			8. API - Application Programming Interface.</br>
+			9. ULAB - University of Liberal Arts Bangladesh.</br>
+		   10. HTTP - Hypertext Transfer Protocol.</br>
+		   11. HTML - Hypertext Markup Language.</br>
+		   12. CSS - Cascading Style Sheets.</br>
+		   13. PHP - Hypertext Preprocessor.</br>
+		   14. TOC -Table of Content.</br>
+		   15. IEEE - Institute of Electrical and Electronics Engineers.</br>
+		   16. MySQL -My Structured Query Language.</br>
+		   17. MS Office - Microsoft Office.</br>
+		   18. SRS - Software Requirement Specification.</br>
+       19. PDF - Proprietary Format <br>
+       20. oAuth - Open Authorization <br>
+       21. SSO - Single sign-on
+
+
+		</p>
+      </div>
+      <!-- Appendix A: Glossary complete -->
+
+      <!-- Appendix B: Analysis Model -->
+      <h4 id="Analysis_Model">Appendix B: Analysis Model</h4>
+      <div>
+
+      </div>
+      <!-- Appendix B: Analysis Model complete -->
+
+      <!-- Appendix C: To Be Determined List -->
+      <h4 id="To_Be_Determined_List">Appendix C: To Be Determined List</h4>
+      <div>
+
+      </div>
+      <!-- Appendix C: To Be Determined List complete -->
+
+    </div>
+    <!-- /contents  -->
+  </div>
+  <!-- /container -->
+
+</body>
+
+</html>
